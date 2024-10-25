@@ -5,31 +5,25 @@ services:
      context: ./tnn/
      args:
       pwsysop: 12345678901234567890123456789012345678901234567890123456789012345678901234567890
-      pwconsole: geheimespw
-      nodeident: Test
-      nodecall: DL1NE
-      location: Hannover, NDS, DE
-      locator: JO42VJ
-      port1: 9k6_User|/dev/ttyS0|1|9600
-      port15: AX25IP|AX25IP|8|19200d
+      pwconsole: admin
+      nodeident: DIGFTL
+      nodecall: FT1NOD
+      location: Freital, SAX, DE
+      locator: JO61TA
+      port1: AX25IP|AX25IP|8|19200d
     ports:
      - 10093:10093/udp
     volumes:
      - ./conf/tnn/:/cfg
-    devices:
-     - /dev/ttyS0:/dev/ttyS0
     restart: unless-stopped
   openbcm:
     build:
      context: ./openbcm/
      args:
-      boxaddr: DL1NE.#NDS.DEU.EU
-      mycall: DL1NE
-      sysop: DL1NE
+      boxaddr: FT1BOX.#DD.SAX.DEU.EU
+      mycall: FT1BOX
+      sysop: PE1FTL
     ports:
      - 8081:8080
-     - 8025:8025
-     - 8110:8110
-     - 8119:8119
     volumes:
      - ./conf/openbcm/:/cfg
