@@ -2,7 +2,7 @@ version: '3'
 services:
   tnn:
     build:
-     context: ./tnn179mh06/
+     context: ./tnn/
      args:
       pwsysop: 12345678901234567890123456789012345678901234567890123456789012345678901234567890
       pwconsole: geheimespw
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
   openbcm:
     build:
-     context: ./openbcm1.07b12/
+     context: ./openbcm/
      args:
       boxaddr: DL1NE.#NDS.DEU.EU
       mycall: DL1NE
